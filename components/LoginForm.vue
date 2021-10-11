@@ -1,5 +1,5 @@
 <template>
-            <div class="row mx-0 px-0 justify-content-center">            
+ <div class="row mx-0 px-0 justify-content-center">            
                 <div class="col-md-6 mx-0 px-md-3 px-0 mt-0">
                     <form  @submit.prevent="login(form)"  class="row mx-0 bg-white py-5 px-4 px-md-5 border-radius-10 shadow">
                         <div class="col-md-12 px-1 px-md-2">
