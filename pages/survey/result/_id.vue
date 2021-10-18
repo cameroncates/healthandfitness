@@ -8,9 +8,9 @@
                 <h5 class="text-muted font-weight-normal">All the survey that you took in {{ camelCaseToSentenceCase(collection_name) }} is showing below</h5>
             </section>    
 
-            <section class="container mb-5 mt-5">
+            <section class="container mb-5 mt-5 px-0">
                 <div v-if="result && !loading" class="row mx-0">
-                    <div id="non-rendered" class="buttons-section col-md-12 text-right py-4">
+                    <div id="non-rendered" class="buttons-section col-md-12 text-right py-4 px-0">
                         <button @click="exportAsPDF('editor', 'non-rendered', camelCaseToSentenceCase(collection_name))" class="btn hover-effect font-weight-bold">
                             <span class="text-primary d-flex align-items-center">
                                 <span class="mdi mdi-pdf-box mdi-24px mr-2"></span>
@@ -49,13 +49,13 @@
                         <div class="col-md-12 my-3">
                             <article class="transition position-relative border-radius-10">
                                 <div class="text-left py-4 px-3">
-                                    <h5 class="font-weight-light line-height-200 mb-0 mt-3">
+                                    <h6 class="font-weight-light line-height-200 mb-0 mt-3">
                                         Result submitted: {{ result.datetime }}    
-                                    </h5>
-                                    <h5 class="font-weight-light line-height-200 ">
+                                    </h6>
+                                    <h6 class="font-weight-light line-height-200 ">
                                         Total Scored: {{ result.list.reduce((prev, cur) => prev + parseInt(cur.active), 0) }}/{{ result.list.length * 10 }}    
-                                    </h5>
-                                    <h5 class="font-weight-light line-height-200 ">
+                                    </h6>
+                                    <h6 class="font-weight-light line-height-200 ">
                                         Overall Rating: 
                                         &nbsp;
                                         <span class="mdi mdi-star text-warning"></span>
@@ -64,7 +64,7 @@
                                         <span class="mdi mdi-star text-warning"></span>
                                         <span class="mdi mdi-star text-warning"></span>
                                         <span>({{ Math.round(((result.list.reduce((prev, cur) => prev + parseInt(cur.active), 0)/(result.list.length * 10))*10) * 10) / 10  }})</span>    
-                                    </h5>
+                                    </h6>
                                     <!-- <div class="w-100 border-top text-center py-1 mt-3">
                                         <a href="`/survey/result/${collection_name}-${id}`" class="btn text-white font-weight-bold px-2">View Results</a>
                                     </div> -->

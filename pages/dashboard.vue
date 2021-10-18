@@ -8,9 +8,9 @@
         <section class="container mb-5 mt-5">
             <div class="row mx-0">
                 <div class="col-md-4 my-3" v-for="(survey, i) in surveys" :key="i">
-                    <article class="hover-shadow transition position-relative border-radius-10">
-                        <div class="border-radius-top-10">
-                            <img :src="survey.thumbnail" width="100" height="100" style="float:left"> 
+                    <article class="row mx-0 hover-shadow transition position-relative border-radius-10">
+                        <div class="border-radius-top-10 col-12 text-center pt-4">
+                            <img :src="survey.thumbnail" width="100" height="100"> 
                         </div>
                         <div class="text-center py-4 px-3">
                             <h6 class="font-weight-bold my-2">
