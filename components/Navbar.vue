@@ -4,7 +4,10 @@
         <div class="container">
             <div class="row mx-0 justify-content-between align-items-center">
                 <div arial-label="left" class="col-md-4 text-center text-md-left p-4 p-md-0">
-                    <a rel="nofollow" :href="uid ? '/dashboard' : '/'"><img :src="logo" width="60px" alt=""></a>
+                    <a rel="nofollow" :href="uid ? '/dashboard' : '/'">
+                        <img :src="logo" width="220px" alt="">
+                        <strong v-if="uid" class="text-dark ml-3">DASHBOARD</strong>
+                    </a>
                 </div>
                 <div arial-label="right" class="col-md-8 text-center text-md-right">                   
                     <a rel="nofollow" :href="menu_item.href" v-for="(menu_item, i) in uid ? auth_menu : menu" :key="i" class="btn font-weight-bold btn--hover--primary ml-2">
@@ -54,7 +57,7 @@
 </template>
 
 <script>
-import logo from "@/assets/images/LOGO.png"
+import logo from "@/assets/images/LOGO.jpeg"
 import { mapActions, mapGetters, mapMutations } from 'vuex'
 import * as fb from '@/services/firebase.js'
 export default {
@@ -64,7 +67,6 @@ export default {
             loading: true,
             logo,
             auth_menu: [
-                { name: "Dashboard", href: "/dashboard" },
                 { name: "Results", href: "/results" },
                 { name: "Profile", href: "/profile" },
                 { name: "Logout", href: "/logout" },

@@ -2,7 +2,7 @@
     <div>
         <section class="container text-center">
             <h2 class="text-primary">Fitness Record Asssesment</h2>
-            <h5 class="text-muted font-weight-normal">Check out our different Assesments</h5>
+            <h5 class="text-muted font-weight-normal">From this page, you will be able to select and complete any of the assessments. You will also be able to come back and view the results and send them to trusted third parties.</h5>
         </section>
 
         <section class="container mb-5 mt-5">
