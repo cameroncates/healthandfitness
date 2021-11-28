@@ -2,8 +2,8 @@ export const survey = {
     list: [
         {
             title: `
-            The greater the symptom, the higher the score. (A low score is a good score)
-            <br>
+            <Strong> <Strong>On the Health Climate Survey,a low score is a good score.</Strong></Strong>
+            <br><br>
             <strong>Headaches (including migraines)</strong>
             `,
             labels: [
