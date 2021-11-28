@@ -1,11 +1,11 @@
 export const survey = {
     list: [
-      { title: `
-            <Strong> <Strong>On the Universal Fitness Test, a high score is a good score.</Strong></Strong>
-            <br><br>
-            }
+      
         {
-            title: `                        
+            title:
+            <Strong> <Strong>On the Health Climate Survey, a low score is a good score.</Strong></Strong>
+            <br><br>
+          
                 <p><b>20 metre run</b> - number of 20m laps in 5 minutes. This is the classic test of aerobic fitness, superseding the 'beep test'.</p> 
                 One foot must go beyond the line at the end of each lap.
                 <br><br>
