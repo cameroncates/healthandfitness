@@ -6,7 +6,7 @@
                 <div arial-label="left" class="col-md-4 text-center text-md-left p-4 p-md-0">
                     <a rel="nofollow" :href="uid ? '/dashboard' : '/'">
                         <img :src="logo" width="220px" alt="">
-                        <strong v-if="uid" class="text-dark ml-3">DASHBOARD</strong>
+                        
                     </a>
                 </div>
                 <div arial-label="right" class="col-md-8 text-center text-md-right">                   
