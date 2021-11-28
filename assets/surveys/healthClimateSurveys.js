@@ -2,7 +2,7 @@ export const survey = {
     list: [
         {
             title: `
-            <Strong> <Strong>On the Health Climate Survey,a low score is a good score.</Strong></Strong>
+            <Strong> <Strong>On the Health Climate Survey, a low score is a good score.</Strong></Strong>
             <br><br>
             <strong>Headaches (including migraines)</strong>
             `,
