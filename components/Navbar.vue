@@ -55,7 +55,7 @@
 </template>
 
 <script>
-import logo from "@/assets/images/LOGO.png"
+import logo from "@/assets/images/LOGO.jpeg"
 import { mapActions, mapGetters, mapMutations } from 'vuex'
 import * as fb from '@/services/firebase.js'
 export default {
