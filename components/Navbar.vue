@@ -1,15 +1,13 @@
 <template>
     <!-- NAVIGATION -->
-    <nav id="header-desktop" class="container-fluid py-2 bg-light mb-5 shadow my-0 position-relative">
+    <nav id="header-desktop" class="container-fluid py-2 bg-light mb-5 shadow d-lg-block d-none my-0 position-relative">
         <div class="container">
             <div class="row mx-0 justify-content-between align-items-center">
-                <div arial-label="left" class="col-md-4 text-center text-md-left p-4 p-md-0">
-                    <a rel="nofollow" :href="uid ? '/dashboard' : '/'">
-                        <img :src="logo" width="220px" alt="">
-                        
-                    </a>
+                <div arial-label="left">
+                    <a rel="nofollow" :href="uid ? '/dashboard' : '/'"><img :src="logo" width="200px" alt=""></a>
+                     
                 </div>
-                <div arial-label="right" class="col-md-8 text-center text-md-right">                   
+                <div arial-label="right">                   
                     <a rel="nofollow" :href="menu_item.href" v-for="(menu_item, i) in uid ? auth_menu : menu" :key="i" class="btn font-weight-bold btn--hover--primary ml-2">
                         {{ menu_item.name }}
                     </a>
@@ -57,7 +55,7 @@
 </template>
 
 <script>
-import logo from "@/assets/images/LOGO.jpeg"
+import logo from "@/assets/images/LOGO.png"
 import { mapActions, mapGetters, mapMutations } from 'vuex'
 import * as fb from '@/services/firebase.js'
 export default {
@@ -67,6 +65,7 @@ export default {
             loading: true,
             logo,
             auth_menu: [
+                { name: "Dashboard", href: "/dashboard" },
                 { name: "Results", href: "/results" },
                 { name: "Profile", href: "/profile" },
                 { name: "Logout", href: "/logout" },
