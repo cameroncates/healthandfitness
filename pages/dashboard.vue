@@ -16,7 +16,6 @@
                             <h6 class="font-weight-bold my-2">
                                 {{ survey.name }}
                             </h6>
-                            <p class="small font-weight-light line-height-200">Be patience and check the survey questions properly.</p>
                             <div class="w-100 border-top text-right py-1">
                                 <a :href="`/survey/${survey.collection_name}`" class="btn btn--hover--primary font-weight-bold px-2">Take Survey</a>
                                 <a :href="`/survey/history/${survey.collection_name}`" class="btn btn--hover--primary font-weight-bold px-2">Results</a>
