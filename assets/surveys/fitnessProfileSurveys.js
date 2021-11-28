@@ -2,7 +2,7 @@ export const survey = {
     list: [
      
         {
-            title:'On '
+            title:
           "Are you keeping yourself fit and healthy to the best of your ability?",
             labels: [
                 { name: "No", steps: [0, 1, 2, 3, 4, 5] }, 
