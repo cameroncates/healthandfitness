@@ -1,8 +1,9 @@
 export const survey = {
     list: [
-      title: `
+      { title: `
             <Strong> <Strong>On the Fitness Profile Survey, a high score is a good score.</Strong></Strong>
             <br><br>
+            }
         {
             title: "Are you keeping yourself fit and healthy to the best of your ability?",
             labels: [
