@@ -3,6 +3,8 @@ export const survey = {
      
         {
             title:
+          "On the Fitness profile survey, a high score is a good score."<br>
+          
           "Are you keeping yourself fit and healthy to the best of your ability?",
             labels: [
                 { name: "No", steps: [0, 1, 2, 3, 4, 5] }, 
