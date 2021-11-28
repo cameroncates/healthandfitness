@@ -2,7 +2,8 @@
     <div>
         <section class="container text-center">
             <h2 class="text-primary">{{ camelCaseToSentenceCase(collection_name) }}</h2>
-            <h5 class="text-muted font-weight-normal">The greater the symptom, the higher the score. (A low score is a good score)</h5>
+            <br>
+            <h5 class="text-muted font-weight-normal"><Strong>The greater the symptom, the higher the score. (A low score is a good score)</Strong></h5>
         </section>    
         <div class="row mx-0 px-0 my-4 py-4">
 
