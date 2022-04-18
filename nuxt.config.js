@@ -52,10 +52,17 @@ export default {
   router: {
     middleware: ["authenticated"]
   }, 
+  axios: {
+    baseURL: '/'
+  },
+  serverMiddleware: ['~/api/index.js'],
+
   /*
    ** Nuxt.js modules
    */
   modules: [
+    '@nuxtjs/pwa',
+    '@nuxtjs/axios'
     // [
     //   "@nuxtjs/firebase",
     //   {

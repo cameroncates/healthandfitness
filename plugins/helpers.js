@@ -12,37 +12,37 @@ Vue.mixin({
          getBgColor(step) {
                let fill = null
                switch(step) {
-                    case 10:
+                    case 0:
                          fill = "#69B34C"
                          break
-                    case 9:
+                    case 1:
                          fill = "#69B34C"
                          break
-                    case 8:
+                    case 2:
                          fill = "#ACB334"
                          break
-                    case 7:
+                    case 3:
                          fill = "#ACB334"
                          break         
-                    case 6:
+                    case 4:
                          fill = "#FAB733"
                          break          
                     case 5:
                          fill = "#FAB733"
                          break
-                    case 4:
+                    case 6:
                          fill = "#FF8E15"
                          break          
-                    case 3:
+                    case 7:
                          fill = "#FF8E15"
                          break          
-                    case 2:
+                    case 8:
                          fill = "#FF4E11"
                          break          
-                    case 1:
+                    case 9:
                          fill = "#FF4E11"
                          break
-                    case 0:
+                    case 10:
                          fill = "#FF0D0D"
                          break                                        
                     default:

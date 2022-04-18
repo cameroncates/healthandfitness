@@ -31,6 +31,7 @@
 <script>
 import * as fb from '@/services/firebase.js'
 import { mapGetters } from 'vuex'
+
 export default {
     data() {
         return {
@@ -47,19 +48,24 @@ export default {
         })
     },
     methods: {
-        async sendInvitation(form) {            
-            this.loading = true
-            let users = await fb.db.collection("users").get()
+        async sendInvitation(form) {  
 
-            users.docs.map(async (doc) => {
-                let data = doc.data()
-                if (data.email == form.email) {
-                    data.notification ? data.notification.push(this.notification) : data.notification = [this.notification]
-                    await fb.usersCollection.doc(doc.id).set(data)
-                    alert("Invitation Send Successfully")
-                    $(this.$refs.close).click()
-                }
-            })            
+            this.loading = true
+
+  await this.$axios.post('/api/message', {
+    email: form.email,
+    notification: this.notification.title+this.notification.url,
+  })
+    .then((res) => {
+        console.log(res);
+      // On clear le formulaire
+        alert("Invitation Send Successfully")
+        $(this.$refs.close).click()
+    })
+    .catch((err) => {
+      console.log(err)
+    })            
+          
             this.loading = false
         }
     }

@@ -1,5 +1,65 @@
 <template>
     <div>
+        <section class="container ">
+            <form  @submit.prevent="update(form)" class="row mx-0 bg-white py-5 px-4 px-md-5 border-radius-10">
+                <div class="col-md-12 px-1 px-md-2 text-center">
+                    <img :src="slide_img"  alt="">
+                </div>
+                <div>
+                    For centuries whenever Australians have met they've been asking each other 'ow-y-garn'. One word. The usual response is 'not-bad-ows-y-self'.
+                </div>
+                <div>
+                    Can you think of two more negative words to string together to describe how you feel than 'not' and 'bad'.
+                </div>
+                <div> 
+                    The 100 point 'how are you going' scale will enable you to give a precise answer to the question.
+                </div>
+                <div>
+                    The scale goes from zero (dreadful) through to 100 (absolutely fantastic).
+                </div>
+                        <input v-model="form.fname" type="hidden" class="form-control custom--input" placeholder="First Name" required>
+                        <input v-model="form.lname" type="hidden" class="form-control custom--input" placeholder="Last Name" required>
+                        <input v-model="form.email" type="hidden" class="form-control custom--input" placeholder="Email" required>
+                        <input v-model="form.mobile_number" type="hidden" class="form-control custom--input" placeholder="Mobile Number" required>
+                <div class="col-md-6 px-1 px-md-2 my-2">
+                    <label>Your score: any number between 1 and 100</label>
+                    <div class="input-group">
+                        <input  type="number" v-model="form.score" class="form-control custom--input" placeholder="Score" min="1" max="100" required>
+                    </div>    
+                </div>
+
+                <div class="col-md-6 px-1 px-md-2 my-2">
+                    <label>Age</label>
+                    <div class="input-group">
+                        <input v-model="form.age" type="number" class="form-control custom--input" placeholder="Age" required>
+                    </div>    
+                </div>
+                <div class="col-md-6 px-1 px-md-2 my-2">
+                    <div class="form-group">
+                    <label>Gender</label>
+                        <select v-model="form.gender" class="form-control custom--input" id="exampleFormControlSelect1" required>
+                          <option selected disabled>Select Gender</option>
+                          <option value="male">Male</option>
+                          <option value="female">Female</option>
+                          <option value="other">Other</option>
+                        </select>
+                    </div>                                
+                </div> 
+                <div class="col-md-6 px-1 px-md-2 my-2">
+                    <label>PostCode</label>
+                    <div class="input-group">
+                        <input  type="text" v-model="form.postcode" class="form-control custom--input" placeholder="Post Code" required>
+                    </div>    
+                </div>
+
+                <div class="col-md-12 text-center my-4">
+                    <button :disabled="loading" class="btn btn--primary px-5 py-1 font-weight-bold rounded-pill">
+                        {{ loading ? "Please wait..." : "Submit" }}
+                    </button>
+                </div>
+            </form>
+
+        </section>
         <section class="container text-center">
             <h2 class="text-primary">Fitness Record Asssesment</h2>
             <h5 class="text-muted font-weight-normal">From this page, you will be able to select and complete any of the assessments. You will also be able to come back and view the results and send them to trusted third parties.</h5>
@@ -31,11 +91,29 @@
 </template>
 
 <script>
+import * as fb from '@/services/firebase.js'
+import { mapGetters } from 'vuex'
+import slide_img from "@/assets/images/slide.jpg"
 export default {
     data() {
         return {
+            score:'',
+            age:'',
+            gender:'',
+            postcode:'',
+            slide_img,
+            form: {
+                fname: "loading...",
+                lname: "loading...",
+                email: "loading...",
+                mobile_number: "loading...",
+                postcode: "loading...",
+                score: "loading...",
+                age: "loading...",
+                gender: null
+            },
             surveys: [
-                       { name: "Health climate Survery", thumbnail: "https://www.johnmiller.com.au/my_fitness_record/images/logos_complete_9-21/health_climate_survey_app_logo_125.jpg", collection_name: "healthClimateSurveys"  },
+               { name: "Health climate Survery", thumbnail: "https://www.johnmiller.com.au/my_fitness_record/images/logos_complete_9-21/health_climate_survey_app_logo_125.jpg", collection_name: "healthClimateSurveys"  },
                 { name: "Fitness Profile", thumbnail: "https://www.johnmiller.com.au/my_fitness_record/images/logos_complete_9-21/fitness_assessment%20app%20logo_125.jpg", collection_name: "fitnessProfileSurveys" },
                 { name: "Universal Fitness Test", thumbnail: "https://www.johnmiller.com.au/my_fitness_record/images/logos_complete_9-21/universal_fitness_test_app_logo_125.jpg", collection_name: "universalFitnessSurveys"  },
                 { name: "Specific Joint Assessment", thumbnail: "https://www.johnmiller.com.au/my_fitness_record/images/logos_complete_9-21/specific_joint_assessment_app%20_logo_125.jpg", collection_name: "specificJointSurveys" },
@@ -55,8 +133,44 @@ export default {
                 { name: "People", thumbnail: "https://www.johnmiller.com.au/my_fitness_record/images/logos_complete_9-21/people-profile_app_logo_125.jpg", collection_name: "peopleSurveys" },
             ]
         }
-    }
-}
+
+    },
+    computed: {
+        ...mapGetters({
+            uid: "web/getUid",
+            user: "web/getUser"
+        })
+    },
+    watch: {
+        user(user) {
+            this.score = user.score
+            this.age = user.age
+            this.gender = user.gender
+            this.postcode = user.postcode
+            this.form.fname = user.fname
+            this.form.lname = user.lname
+            this.form.email = user.email
+            this.form.mobile_number = user.mobile_number
+            this.form.postcode = user.postcode
+            this.form.score = user.score
+            this.form.gender = user.gender
+            this.form.age = user.age
+        }
+    },
+    methods: {
+        async update(form) {
+            try {
+                this.loading = true
+                await fb.usersCollection.doc(this.uid).set(form)
+                this.loading = false
+                alert("Updated successfully")
+
+            } catch (err) {
+                alert(err.message)
+                this.loading = false
+            }
+        }
+    },}
 </script>
 
 <style>
