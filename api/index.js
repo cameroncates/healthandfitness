@@ -17,13 +17,13 @@ app.post('/message', async (req, res) => {
    port: 465,
    secure: true,
    auth: {
-     user: 'annu.capricorn@gmail.com',
-     pass: 'iwillnottell'
+     user: 'ithealthandfitnessaudit@gmail.com',
+     pass: 'Project@123'
    }
  })
 
  const info = await transporter.sendMail({
-    from: 'annu.capricorn@gmail.com',
+    from: 'ithealthandfitnessaudit@gmail.com',
     to: req.body.email,
     subject: 'Result Shared', 
     text: 'test',
