@@ -41,7 +41,7 @@
                         <div class="col-md-12 my-2" v-for="(question, id) in result.list" :key="id">
                             <article class="border-bottom">
                                 <div class="d-flex justify-content-between align-items-center text-left px-3">
-                                    <h6 class="font-weight-normal w-75" v-html="camelCaseToSentenceCase(question.title)">
+                                    <h6 class="font-weight-normal w-75" v-html="(question.title)">
                                     </h6>
                                     <h5 class="font-weight-bold px-3 py-1" style="border: 4px solid black">
                                         {{ question.active}}  

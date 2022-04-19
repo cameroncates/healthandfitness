@@ -8,9 +8,6 @@
                 <div>
                     For centuries whenever Australians have met they've been asking each other 'ow-y-garn'. One word. The usual response is 'not-bad-ows-y-self'.
                 </div>
-                <div>
-                    Can you think of two more negative words to string together to describe how you feel than 'not' and 'bad'.
-                </div>
                 <div> 
                     The 100 point 'how are you going' scale will enable you to give a precise answer to the question.
                 </div>
@@ -70,7 +67,7 @@
                 <div class="col-md-4 my-3" v-for="(survey, i) in surveys" :key="i">
                     <article class="row mx-0 hover-shadow transition position-relative border-radius-10">
                         <div class="border-radius-top-10 col-12 text-center pt-4">
-                            <img :src="survey.thumbnail" width="100" height="100"> 
+                            <a :href="`/survey/${survey.collection_name}`"><img :src="survey.thumbnail" width="100" height="100"> </a>
                         </div>
                         <div class="text-center py-4 px-3">
                             <h6 class="font-weight-bold my-2">
