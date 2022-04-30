@@ -21,7 +21,7 @@
                             <p class="pl-4"><strong>Note: </strong> When you click on the <strong><i>Download as PDF</i></strong> button, the pdf will appear in the downloads folder of your computer. To send it to someone else, open your email account, insert the email of the person you are sending the report to and extract the PDF from your Download box and attach it to the email. Then Press 'send'.</p>
                         </div>
                         <button @click="setNotification({
-                            title: user ? `<strong>${user.fname} ${user.lname}</strong> shared a survey with you: I have scored <strong>${result.list.reduce((prev, cur) => prev + parseInt(cur.active), 0)}</strong> out of ${result.list.length * 10} in the <strong>${camelCaseToSentenceCase(collection_name)}</strong>. My overall Rating was <strong>${Math.round(((result.list.reduce((prev, cur) => prev + parseInt(cur.active), 0)/(result.list.length * 10))*10) * 10) / 10}</strong>` : 'Unknow Title',
+                            title: user ? `<strong>${camelCaseToSentenceCase(collection_name)} results</strong><br> ${user.fname} ${user.lname}  have scored <strong>${result.list.reduce((prev, cur) => prev + parseInt(cur.active), 0)}</strong> out of ${result.list.length * 10} in the <strong>${camelCaseToSentenceCase(collection_name)}</strong> ` : 'Unknow Title',
                             read: false,
                             datetime: getDateTime(),
                             url: `/survey/result/${collection_name}-${result_id}?uid=${uid}`,

@@ -54,7 +54,7 @@ export default {
 
   await this.$axios.post('/api/message', {
     email: form.email,
-    notification: this.notification.title+this.notification.url,
+    notification: this.notification.title,
   })
     .then((res) => {
         console.log(res);
