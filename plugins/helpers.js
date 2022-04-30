@@ -9,7 +9,7 @@ Vue.mixin({
      mounted() {
      },
     methods:{
-         getBgColor(step) {
+     getHealthBgColor(step) {
                let fill = null
                switch(step) {
                     case 0:
@@ -51,7 +51,49 @@ Vue.mixin({
                }
                return fill
          },
-          async getDoc({ collection_name, uid }) {
+         getBgColor(step) {
+          let fill = null
+          switch(step) {
+               case 10:
+                    fill = "#69B34C"
+                    break
+               case 9:
+                    fill = "#69B34C"
+                    break
+               case 8:
+                    fill = "#ACB334"
+                    break
+               case 7:
+                    fill = "#ACB334"
+                    break         
+               case 6:
+                    fill = "#FAB733"
+                    break          
+               case 5:
+                    fill = "#FAB733"
+                    break
+               case 4:
+                    fill = "#FF8E15"
+                    break          
+               case 3:
+                    fill = "#FF8E15"
+                    break          
+               case 2:
+                    fill = "#FF4E11"
+                    break          
+               case 1:
+                    fill = "#FF4E11"
+                    break
+               case 0:
+                    fill = "#FF0D0D"
+                    break                                        
+               default:
+                    fill = "orange"
+                    break
+          }
+          return fill
+    },
+     async getDoc({ collection_name, uid }) {
                let ref = await fb.db.collection(collection_name).doc(uid)
                const doc = await ref.get()
                return doc
@@ -59,37 +101,37 @@ Vue.mixin({
           updateSlider(slider, active) {
                let fill = null
                     switch(active) {
-                         case "0":
+                         case "10":
                               fill = "#69B34C"
                               break
-                         case "1":
+                         case "9":
                               fill = "#69B34C"
                               break
-                         case "2":
+                         case "8":
                               fill = "#ACB334"
                               break
-                         case "3":
+                         case "7":
                               fill = "#ACB334"
                               break         
-                         case "4":
+                         case "6":
                               fill = "#FAB733"
                               break          
                          case "5":
                               fill = "#FAB733"
                               break
-                         case "6":
+                         case "4":
                               fill = "#FF8E15"
                               break          
-                         case "7":
+                         case "3":
                               fill = "#FF8E15"
                               break          
-                         case "8":
+                         case "2":
                               fill = "#FF4E11"
                               break          
-                         case "9":
+                         case "1":
                               fill = "#FF4E11"
                               break
-                         case "10":
+                         case "0":
                               fill = "#FF0D0D"
                               break                                        
                          default:

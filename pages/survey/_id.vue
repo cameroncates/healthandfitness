@@ -12,7 +12,30 @@
             <div v-for="(q, i) in survey.list" :key="i" class="mb-5 px-0 align-self-center w-100 "> 
                 <p class="line-height-200 mb-1" v-html="q.title">
                 </p> 
-                <div class="row">
+                <div v-if="collection_name == 'healthClimateSurveys' " class="row">
+                    <div v-for="(label, j) in q.labels" :key="j" 
+                        :class="label.steps && 
+                        (label.steps.length == 1 || label.steps.filter(l => l != null).length == 1) ? 'text-center' : 
+                        q.labels[j+1] ? 'text-left' : 'text-right'"
+                        class="px-1">
+                        <p class="mb-0 font-weight-light pl-2" v-html="label.name">
+                        </p>                    
+                        <div class="range-slider" v-if="label.steps">
+                            <span
+                                :style="{
+                                    'background-color': (q.active == step && step > 0) || (step == 0 && q.active == step) ? getHealthBgColor(step) : 'transparent',
+                                    }"
+                                @click="q.active = step" 
+                                v-for="(step, k) in label.steps" :key="k" 
+                                :class="step == null ? 'p-0 mx-0' : null"
+                                class="cursor-pointer range-slider__value text">
+                                {{ step }}
+                            </span>
+                        </div>
+                    </div>
+                    <span class="align-self-end ml-5 range-slider__value range-slider__value__active">{{ q.active }}</span>
+                </div>    
+                <div v-else class="row">
                     <div v-for="(label, j) in q.labels" :key="j" 
                         :class="label.steps && 
                         (label.steps.length == 1 || label.steps.filter(l => l != null).length == 1) ? 'text-center' : 
@@ -38,8 +61,8 @@
 
                 <div class="range-slider">
                     <!-- <input class="range-slider__range" type="range" v-model="q.active" 
-                        @input="updateSlider($event, q.active)"
-                        @change="updateSlider($event, q.active)" min="0" max="10" step="1"> -->
+                        @input="updateHealthSlider($event, q.active)"
+                        @change="updateHealthSlider($event, q.active)" min="0" max="10" step="1"> -->
                 </div>
             </div>   
             <div class="col-md-11 mt-4 pt-5 border-top text-right">
