@@ -34,6 +34,68 @@ export const survey = {
             ],
             active: 0 
         },
+       {
+            title: "What was your score on the <strong> blood glucose level?</strong>",
+            labels: [
+                { name: "Poor <br> >10", steps: [0] }, 
+                { name: ". <br> 10", steps: [1] }, 
+                { name: ". <br> 9.0", steps: [2] }, 
+                { name: ". <br> 8.5", steps: [3] }, 
+                { name: ". <br> 8.0", steps: [4] }, 
+                { name: ". <br> 7.5", steps: [5] }, 
+                { name: ". <br> 7.0", steps: [6] }, 
+                { name: ". <br> 6.5", steps: [7] },
+                { name: "Good <br> < Less than 6", steps: [10] }, 
+            ],
+            active: 0 
+        },
+       {
+            title: "What was your score on the <strong> Cholesterol level?</strong>",
+            labels: [
+                { name: "Poor <br> >8.5", steps: [0] }, 
+                { name: ". <br> <8.5", steps: [1] }, 
+                { name: ". <br> <8.0", steps: [2] }, 
+                { name: ". <br> <7.0", steps: [3] }, 
+                { name: ". <br> <6.5", steps: [4] }, 
+                { name: ". <br> <6.0", steps: [5] }, 
+                { name: ". <br> <5.5", steps: [6] }, 
+                { name: ". <br> <5.0", steps: [7] }, 
+                { name: ". <br> <4.6", steps: [8] }, 
+                { name: ". <br> <4.3", steps: [9] }, 
+                { name: "Good <br> <4", steps: [10] }, 
+            ],
+            active: 0 
+        },
+       {
+            title: "What was your score on the <strong> Blood pressure - systolic?</strong>",
+            labels: [
+                { name: "Poor <br> >155", steps: [0] }, 
+                { name: ". <br> <155", steps: [3] }, 
+                { name: ". <br> <150", steps: [4] }, 
+                { name: ". <br> <145", steps: [5] },
+                { name: ". <br> <140", steps: [6] }, 
+                { name: ". <br> <135", steps: [7] }, 
+                { name: ". <br> <130", steps: [8] }, 
+                { name: ". <br> <125", steps: [9] }, 
+                { name: "Good <br> <120", steps: [10] }, 
+            ],
+            active: 0 
+        },
+       {
+            title: "What was your score on the <strong> Blood pressure - diastolic?</strong>",
+            labels: [
+                { name: "Poor <br> >105", steps: [0] }, 
+                { name: ". <br> <105", steps: [3] }, 
+                { name: ". <br> <100", steps: [4] }, 
+                { name: ". <br> <97", steps: [5] }, 
+                { name: ". <br> <94", steps: [6] }, 
+                { name: ". <br> <90", steps: [7] }, 
+                { name: ". <br> <87", steps: [8] }, 
+                { name: ". <br> <84", steps: [9] }, 
+                { name: "Good <br> <80", steps: [10] }, 
+            ],
+            active: 0 
+        },
         {
             title: "Do you smoke? If ‘yes’ score zero. If ‘no’, score 10.",
             labels: [
