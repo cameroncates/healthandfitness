@@ -1,12 +1,20 @@
 export const survey = {
     list: [
         {
-            title: "Back. Rate the current condition of your back",
+            title: "Lower Back. Rate the current condition of your back",
             labels: [
                 { name: "Dreadful", steps: [0, 1, 2, 3, 4, 5]}, 
                 { name: "Good", steps: [6, 7, 8, 9, 10] }, 
             ],
             active: 0 
+          {
+            title: "Upper Back. Rate the current condition of your back",
+            labels: [
+                { name: "Dreadful", steps: [0, 1, 2, 3, 4, 5]}, 
+                { name: "Good", steps: [6, 7, 8, 9, 10] }, 
+            ],
+            active: 0 
+        },
         },
         {
             title: "Neck. Rate the current condition of your neck",
@@ -82,6 +90,22 @@ export const survey = {
                 { name: "Dreadful", steps: [0, 1, 2, 3, 4, 5]}, 
                 { name: "Good", steps: [6, 7, 8, 9, 10] }, 
                  
+            ],
+            active: 0 
+        },
+          {
+            title: "Right Lower Leg. Rate the current condition of your right leg",
+            labels: [
+                { name: "Dreadful", steps: [0, 1, 2, 3, 4, 5]}, 
+                { name: "Good", steps: [6, 7, 8, 9, 10] }, 
+            ],
+            active: 0 
+        },
+          {
+            title: "Left Lower Leg. Rate the current condition of your left leg",
+            labels: [
+                { name: "Dreadful", steps: [0, 1, 2, 3, 4, 5]}, 
+                { name: "Good", steps: [6, 7, 8, 9, 10] }, 
             ],
             active: 0 
         },
