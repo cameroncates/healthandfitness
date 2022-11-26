@@ -1,7 +1,7 @@
 export const survey = {
     list: [
         {
-            title: "Lower siron lakhe shrestha Back. Rate the current condition of your back",
+            title: "Lower Back. Rate the current condition of your back",
             labels: [
                 { name: "Dreadful", steps: [0, 1, 2, 3, 4, 5]}, 
                 { name: "Good", steps: [6, 7, 8, 9, 10] }, 

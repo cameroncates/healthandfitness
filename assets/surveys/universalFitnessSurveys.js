@@ -13,7 +13,7 @@ export const survey = {
             `,
             labels: [
                 { name: "Men <br> Women", steps: [null, null]}, 
-                { name: "<22 <br> <20", steps: [0] }, 
+                { name: "<22 <br> <209", steps: [0] }, 
                 { name: "22 <br> 20", steps: [1] }, 
                 { name: "26<br> 24", steps: [2] }, 
                 { name: "32<br> 30", steps: [3] }, 
@@ -123,7 +123,7 @@ export const survey = {
             `,
             labels: [
                 { name: "Men <br> Women", steps: [null, null]}, 
-                { name: ">35 <br> >4500", steps: [0] }, 
+                { name: ">35 <br> >4500m000", steps: [0] }, 
                 { name: "<35 <br> <45", steps: [1] }, 
                 { name: "<30<br> <40", steps: [2] },  
                 { name: "<28<br> <38", steps: [3] }, 
